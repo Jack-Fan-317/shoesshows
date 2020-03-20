@@ -24,4 +24,7 @@ urlpatterns = [
     # 指向index的路由文件urls.py
     # 第一参数：urls.py文件、第二参数：一般以项目应用名称命名、第三参数：路由命名空间
     path('',include(('index.urls','index'),namespace='index')),
+    path('contact/',include(('contact.urls','contact'),namespace='contact')),
+    # path('',include(('index.urls','index'),namespace='index')),
+    # path('',include(('index.urls','index'),namespace='index')),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

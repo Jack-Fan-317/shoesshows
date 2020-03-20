@@ -1,0 +1,61 @@
+{% extends 'theme.html' %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        {% block css %}<link rel="stylesheet" href="{% static 'css/contact_us.css' %}">{% endblock css %}
+        {% block title %}<title>contact us</title>{% endblock title %}
+    </head>
+    <body>
+        {% block body %}
+            <header>
+                <div class="header">
+                    <h1 class="title">Contact Us</h1>
+                    <div class="logo">
+                        <h1>
+                            <a href="#"></a>
+                        </h1>
+                    </div>
+                    <div class="navitems">
+                        <a href="" class="show">网站介绍</a>
+                        <div class="show" id="show">球鞋展示
+                            <div class="frame1" id="frame">
+                                <a href="">Nike</a>
+                                <a href="">Adidas</a>
+                                <a href="">Converse</a>
+                            </div>
+                        </div>
+                        <a href="" class="show">球鞋资讯</a>
+                        <a href="" class="now show">联系我们</a>
+                        <a href="{% url 'index:index' %}" class="show">回到首页</a>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="main">
+                    <div class="bg"></div>
+                    <div class="contact-section">
+                        <div class="border"></div>
+                        <form action="#" class="contact-form" method="post">
+                            <input type="text" class="contact-form-text" id="userName" placeholder="Your name">
+                            <div>
+                                <h3 id="feedbackName"></h3>
+                            </div>
+                            <input type="email" class="contact-form-text" id="userEmail" placeholder="Your email">
+                            <div>
+                                <h3 id="feedbackEmail"></h3>
+                            </div> 
+                            <input type="text" class="contact-form-text" id="userPhone" placeholder="Your phone">
+                            <div>
+                                <h3 id="feedbackPhone"></h3>
+                            </div>
+                            <textarea class="contact-form-text" placeholder="Your message"></textarea>    
+                            <input type="submit" class="contact-form-btn" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </main>
+        <script src="{% static 'js/contact_us.js' %}"></script>
+        {% endblock body %}
+    </body>
+</html>
