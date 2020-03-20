@@ -1,1 +1,57 @@
-123
+{% extends 'theme.html' %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        {% block css %}<link rel="stylesheet" href="{% static 'css/index.css' %}">{% endblock css %}
+        {% block meta %}
+            <meta name="description" content="品牌球鞋展示,囊括nike、addidas、ANTA、Converse,提供商品的展示,提供资讯一览,轻松娱乐项目。">
+            <meta name="Keywords" content="nike,addidas,ANTA,Converse">
+        {% endblock meta %}
+        {% block title %}<title>shoes shows-品牌鞋类展示-资讯一览、视觉盛宴！</title>{% endblock title %}
+    </head>
+    <body>
+    {% block body %}
+        <header>
+            <div class="w header">
+                <div class="logo">
+                    <h1>
+                        <a href="#"></a>
+                    </h1>
+                </div>
+                <div class="navitems">
+                    <a href="" class="show">网站介绍</a>
+                    <div class="show" id="show">球鞋展示
+                        <div class="frame1" id="frame">
+                            <a href="">Nike</a>
+                            <a href="">Adidas</a>
+                            <a href="">Converse</a>
+                        </div>
+                    </div>
+                    <a href="" class="show">球鞋资讯</a>
+                    <a href="" class="show">联系我们</a>
+                </div>
+            </div>
+        </header>
+        <!-- header_end -->
+        <!-- main_start -->
+        <main>
+            <div class="main">
+                <div id="album">
+                    <img src="{% static 'img/index/af1.png' %}"/>
+                    <img src="{% static 'img/index/b.png' %}"/>
+                    <img src="{% static 'img/index/c.png' %}"/>
+                    <img src="{% static 'img/index/e.png' %}"/>
+                    <img src="{% static 'img/index/f.png' %}"/>
+                    <img src="{% static 'img/index/g.png' %}"/>
+                    <img src="{% static 'img/index/h.png' %}"/>
+                    <img src="{% static 'img/index/i.png' %}"/>
+                </div>
+            </div>
+        </main>
+        <!-- main_end -->
+        <script src="{% static 'js/index.js' %}"></script>
+    {% endblock body %}
+    </body>
+</html>
+    
