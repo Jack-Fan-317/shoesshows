@@ -1,116 +1,116 @@
+{% extends 'theme.html' %}
 <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-        <link rel="stylesheet" href="{% static 'css/news.css' %}">
-        <title>球鞋资讯</title>
+        {% block css %}<link rel="stylesheet" href="{% static 'css/news.css' %}">{% endblock css %}
+        {% block title %}<title>球鞋资讯</title>{% endblock title %}
     </head>
     <body>
-        <header>
-            <div class="header">
-                <div class="logo">
-                    <h1>
-                        <a href="{% static 'logo.png' %}"></a>
-                    </h1>
-                </div>
-                <div class="navitems">
-                    <a href="{% url 'info:info' %}" class="show">网站介绍</a>
-                    <div class="show" id="show">球鞋展示
-                        <div class="frame1" id="frame">
-                            <a href="">Nike</a>
-                            <a href="">Adidas</a>
-                            <a href="">Converse</a>
-                        </div>
+        {% block body_for_news %}
+            <header>
+                <div class="header">
+                    <div class="logo">
+                        <h1>
+                            <a href="{% static 'img/news/logo.png' %}"><img src="{% static 'img/index/logo.png' %}" alt="LOGO"></a>
+                        </h1>
                     </div>
-                    <a href="{% url 'news:news' '1' %}" class="now show">球鞋资讯</a>
-                    <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
-                    <a href="{% url 'index:index' %}" class="show">回到首页</a>
+                    <div class="navitems">
+                        <a href="{% url 'info:info' %}" class="show">网站介绍</a>
+                        <div class="show" id="show">球鞋展示
+                            <div class="frame1" id="frame">
+                                <a href="">Nike</a>
+                                <a href="">Adidas</a>
+                                <a href="">Converse</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'news:news' '1' %}" class="now show">球鞋资讯</a>
+                        <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
+                        <a href="{% url 'index:index' %}" class="show">回到首页</a>
+                    </div>
                 </div>
-            </div>
-        </header>
-        <div class="border"></div>
-        <main>
-            <div class="main">
-                <div class="pic">
-                    <a target=_blank href="#">
-                        <figure>
-                            {% block img_lazy_1 %}{% endblock img_lazy_1 %}
-                            <figcaption class="title">
-                                {% block figcaption_title_1 %}{% endblock figcaption_title_1 %}   
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <span class="tip-date">
-                        {% block span_tip-date_1 %}{% endblock span_tip-date_1 %}
-                    </span>
+            </header>
+            <div class="border"></div>
+            <main>
+                <div class="main">
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                {% block img_lazy_1 %}{% endblock img_lazy_1 %}
+                                <figcaption class="title">
+                                    {% block figcaption_title_1 %}{% endblock figcaption_title_1 %}   
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">
+                            {% block span_tip-date_1 %}{% endblock span_tip-date_1 %}
+                        </span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                {% block img_lazy_2 %}{% endblock img_lazy_2 %}
+                                <figcaption class="title">
+                                    {% block figcaption_title_2 %}{% endblock figcaption_title_2 %}   
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">
+                            {% block span_tip-date_2 %}{% endblock span_tip-date_2 %}
+                        </span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                {% block img_lazy_3 %}{% endblock img_lazy_3 %}
+                                <figcaption class="title">
+                                    {% block figcaption_title_3 %}{% endblock figcaption_title_3 %}   
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">
+                            {% block span_tip-date_3 %}{% endblock span_tip-date_3 %}
+                        </span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                {% block img_lazy_4 %}{% endblock img_lazy_4 %}
+                                <figcaption class="title">
+                                    {% block figcaption_title_4 %}{% endblock figcaption_title_4 %}   
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">
+                            {% block span_tip-date_4 %}{% endblock span_tip-date_4 %}
+                        </span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                {% block img_lazy_5 %}{% endblock img_lazy_5 %}
+                                <figcaption class="title">
+                                    {% block figcaption_title_5 %}{% endblock figcaption_title_5 %}   
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">
+                            {% block span_tip-date_5 %}{% endblock span_tip-date_5 %}
+                        </span>
+                    </div>
                 </div>
-                <div class="pic">
-                    <a target=_blank href="#">
-                        <figure>
-                            {% block img_lazy_2 %}{% endblock img_lazy_2 %}
-                            <figcaption class="title">
-                                {% block figcaption_title_2 %}{% endblock figcaption_title_2 %}   
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <span class="tip-date">
-                        {% block span_tip-date_2 %}{% endblock span_tip-date_2 %}
-                    </span>
+            </main>
+            <footer>
+                <div class="footer">
+                    <div id="pageList">
+                        <a href="{% url 'news:news' '1' %}" id='newsPage1'>1</a>
+                        <a href="{% url 'news:news' '2' %}" id='newsPage2'>2</a>
+                        <a href="{% url 'news:news' '3' %}" id='newsPage3'>3</a>
+                    </div>
                 </div>
-                <div class="pic">
-                    <a target=_blank href="#">
-                        <figure>
-                            {% block img_lazy_3 %}{% endblock img_lazy_3 %}
-                            <figcaption class="title">
-                                {% block figcaption_title_3 %}{% endblock figcaption_title_3 %}   
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <span class="tip-date">
-                        {% block span_tip-date_3 %}{% endblock span_tip-date_3 %}
-                    </span>
-                </div>
-                <div class="pic">
-                    <a target=_blank href="#">
-                        <figure>
-                            {% block img_lazy_4 %}{% endblock img_lazy_4 %}
-                            <figcaption class="title">
-                                {% block figcaption_title_4 %}{% endblock figcaption_title_4 %}   
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <span class="tip-date">
-                        {% block span_tip-date_4 %}{% endblock span_tip-date_4 %}
-                    </span>
-                </div>
-                <div class="pic">
-                    <a target=_blank href="#">
-                        <figure>
-                            {% block img_lazy_5 %}{% endblock img_lazy_5 %}
-                            <figcaption class="title">
-                                {% block figcaption_title_5 %}{% endblock figcaption_title_5 %}   
-                            </figcaption>
-                        </figure>
-                    </a>
-                    <span class="tip-date">
-                        {% block span_tip-date_5 %}{% endblock span_tip-date_5 %}
-                    </span>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <div class="footer">
-                <div id="pageList">
-                    <a href="{% url 'news:news' '1' %}" id='newsPage1'>1</a>
-                    <a href="{% url 'news:news' '2' %}" id='newsPage2'>2</a>
-                    <a href="{% url 'news:news' '3' %}" id='newsPage3'>3</a>
-                </div>
-            </div>
-        </footer>
-        <script src="{% static 'js/news.js' %}"></script>
-        {% block js %}{% endblock js %}
+            </footer>
+            <script src="{% static 'js/news.js' %}"></script>
+            {% block js %}{% endblock js %}
+        {% endblock body_for_news %}
     </body>
 </html>

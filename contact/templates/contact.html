@@ -7,13 +7,13 @@
         {% block title %}<title>contact us</title>{% endblock title %}
     </head>
     <body>
-        {% block body %}
+        {% block body_for_contact %}
             <header>
                 <div class="header">
                     <h1 class="title">Contact Us</h1>
                     <div class="logo">
                         <h1>
-                            <a href="{% static 'logo.png' %}"></a>
+                            <a href="{% static 'img/contact/logo.png' %}"><img src="{% static 'img/index/logo.png' %}" alt="LOGO"></a>
                         </h1>
                     </div>
                     <div class="navitems">
@@ -56,6 +56,6 @@
                 </div>
             </main>
         <script src="{% static 'js/contact_us.js' %}"></script>
-        {% endblock body %}
+        {% endblock body_for_contact %}
     </body>
 </html>

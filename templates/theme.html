@@ -2,14 +2,17 @@
 {% load staticfiles %}
 <html lang="en">
     <head>
-        {% block utf_8 %}<meta charset="UTF-8">{% endblock utf_8 %}
-        {% block ico %}<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">{% endblock ico %}
-        {% block reset %}<link rel="stylesheet" href="{% static 'css/reset.css' %}">{% endblock reset %}
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
         {% block css %}{% endblock css %}
         {% block meta %}{% endblock meta %}
         {% block title %}{% endblock title %}
     </head>
     <body>
-        {% block body %}{% endblock body %}
+        {% block body_for_index %}{% endblock body_for_index %}
+        {% block body_for_info %}{% endblock body_for_info %}
+        {% block body_for_news %}{% endblock body_for_news %}
+        {% block body_for_contact %}{% endblock body_for_contact %}
     </body>
 </html>

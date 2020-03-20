@@ -7,13 +7,13 @@
         {% block title %}<title>网站介绍</title>{% endblock title %}
     </head>
     <body>
-        {% block body %}
+        {% block body_for_info %}
             <div id="topAnchor"></div>
             <header>
                 <div class="header">
                     <div class="logo">
                         <h1>
-                            <a href="{% static 'logo.png' %}"></a>
+                            <a href="{% static 'img/info/logo.png' %}"><img src="{% static 'img/index/logo.png' %}" alt="LOGO"></a>
                         </h1>
                     </div>
                     <div class="navitems">
@@ -110,6 +110,6 @@
                 </div>
             </footer>
             <script src="{% static 'js/info.js' %}"></script>
-        {% endblock body %}
+        {% endblock body_for_info %}
     </body>
 </html>
