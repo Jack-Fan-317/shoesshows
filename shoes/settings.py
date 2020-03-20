@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'contact',
+    'display',
+    'index',
+    'info',
+    'news',
+    'products',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +61,7 @@ ROOT_URLCONF = 'shoes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +82,12 @@ WSGI_APPLICATION = 'shoes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'shoesshows',
+        'USER': 'root',
+        'PASSWORD': '990317',
+        'HOST': 'localhost',
+        'POST': '3306',
     }
 }
 
@@ -118,3 +129,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') # 收集静态文件存放到根目录的static文件夹中
+STATIC_DIRS = [     # 静态资源文件夹
+    os.path.join(BASE_DIR,'contact/static'),
+    os.path.join(BASE_DIR,'display/static'),
+    os.path.join(BASE_DIR,'index/static'),
+    os.path.join(BASE_DIR,'info/static'),
+    os.path.join(BASE_DIR,'news/static'),
+    os.path.join(BASE_DIR,'products/static'),
+    os.path.join(BASE_DIR,'user/static'),
+]
+
+
+MEDIA_URL = '/media/' # 媒体文件路由地址信息
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 媒体文件夹的完整路径
