@@ -1,0 +1,89 @@
+{% extends 'theme_for_display.html' %}
+{% load staticfiles %}
+
+{% block title %}<title>球鞋展示-ADIDAS</title>{% endblock title %}
+{% block rotation_picture %}
+	<li><img src="{% static 'img/adidas/1.png' %}" alt=""></li>
+	<li><img src="{% static 'img/adidas/2.png' %}" alt=""></li>
+	<li><img src="{% static 'img/adidas/3.png' %}" alt=""></li>
+	<li><img src="{% static 'img/adidas/4.png' %}" alt=""></li>
+	<li><img src="{% static 'img/adidas/5.png' %}" alt=""></li>
+	<li><img src="{% static 'img/adidas/6.png' %}" alt=""></li>
+	<li><img src="{% static 'img/adidas/1.png' %}" alt=""></li>
+{% endblock rotation_picture %}
+{% block main_shoestype %}					
+	<div id="adidas">
+		<div id="harden">
+			<h2>Harden系列</h2>
+			<ul id="shoesList">
+				<li class="harden1">
+					<img src="{% static 'img/Harden/harden1-first.jpg' %}" id="harden1">
+					<h3>Harden1</h3>
+				</li>
+				<li class="harden2">
+					<img src="{% static 'img/Harden/harden2-first.jpg' %}" id="harden2">
+					<h3>Harden2</h3>
+				</li>
+				<li class="harden">
+					<img src="{% static 'img/Harden/harden3-first.jpg' %}" id="harden3">
+					<h3>Harden3</h3>
+				</li>
+				<li class="harden">
+					<img src="{% static 'img/Harden/harden4-first.jpg' %}" id="harden4">
+					<h3>Harden4</h3>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock main_shoestype %}
+		<!-- <script>
+			var myBox = document.getElementById('box');
+			var myContent = document.getElementById('content');
+			var more = document.getElementById('more');
+			var myAdias = document.getElementById('adidas');
+			var MyEnd=document.getElementById('end');
+			function handleButtonPress(e) {
+				myBox.className = 'box';
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse1;
+				path_name1=e.target.parentNode.parentNode.parentNode.parentNode.id;
+				path_name2=e.target.parentNode.parentNode.parentNode.id;
+				file_name=e.target.id;
+				httprequest.open('GET',"http://www.shoesshows.club/shoes"+"/"+path_name1+"/"+path_name2+"/"+file_name+"/"+file_name+".html"); 
+				httprequest.send();		
+			}
+			function handleResponse1(e) {
+				if(e.target.readyState == XMLHttpRequest.DONE && e.target.status==200){
+					myContent.innerHTML=e.target.responseText;
+				}
+				
+			}
+			function handleResponse2(e) {
+				if(e.target.readyState == XMLHttpRequest.DONE && e.target.status==200){
+					myAdias.innerHTML+=e.target.responseText;
+					MyEnd.innerHTML="<h4>敬请期待</h4>";
+					more.className='last';
+					for (var i=0;i<document.querySelectorAll("#adidas li").length;i++){
+						document.querySelectorAll("#adidas li")[i].onclick = handleButtonPress;
+					}
+				}
+			}
+			function disappear() {
+				var myContent = document.getElementById('content');
+				var myBox = document.getElementById('box');
+				myContent.innerHTML='';
+				myBox.className='disappear';	
+			}
+			function getMore(e) {
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse2;
+				httprequest.open('GET','more_adidas.html'); 
+				httprequest.send();		
+			}
+			more.onclick=getMore;
+			for (var i=0;i<document.querySelectorAll("#adidas li").length;i++){
+				document.querySelectorAll("#adidas li")[i].onclick = handleButtonPress;
+			}
+			myBox.onclick=disappear;
+				
+		</script> -->

@@ -1,0 +1,89 @@
+{% extends 'theme_for_display.html' %}
+{% load staticfiles %}
+
+{% block title %}<title>球鞋展示-NIKE</title>{% endblock title %}
+{% block rotation_picture %}
+	<li><img src="{% static 'img/nike/1.png' %}" alt=""></li>
+	<li><img src="{% static 'img/nike/2.png' %}" alt=""></li>
+	<li><img src="{% static 'img/nike/3.png' %}" alt=""></li>
+	<li><img src="{% static 'img/nike/4.png' %}" alt=""></li>
+	<li><img src="{% static 'img/nike/5.png' %}" alt=""></li>
+	<li><img src="{% static 'img/nike/6.png' %}" alt=""></li>
+	<li><img src="{% static 'img/nike/1.png' %}" alt=""></li>
+{% endblock rotation_picture %}
+{% block main_shoestype %}
+	<div id="nike">
+		<div id="kyrie">
+			<h2>Kyrie系列</h2>
+			<ul id="shoesList">
+				<li class="kyrie1">
+					<img src="{% static 'img/Kyrie/kyrie1-first.jpg' %}" id="kyrie1">
+					<h3>Kyrie1</h3>
+				</li>
+				<li class="kyrie2">
+					<img src="{% static 'img/Kyrie/kyrie2-first.jpg' %}" id="kyrie2">
+					<h3>Kyrie2</h3>
+				</li>
+				<li class="kyrie3">
+					<img src="{% static 'img/Kyrie/kyrie3-first.jpg' %}" id="kyrie3">
+					<h3>Kyrie3</h3>
+				</li>
+				<li class="kyrie4">
+					<img src="{% static 'img/Kyrie/kyrie4-first.jpg' %}" id="kyrie4">
+					<h3>Kyrie4</h3>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock main_shoestype %}
+		<!-- <script>
+			var myBox = document.getElementById('box');
+			var myContent = document.getElementById('content');
+			var more = document.getElementById('more');
+			var myNike = document.getElementById('nike');
+			var MyEnd=document.getElementById('end');
+			function handleButtonPress(e) {
+				myBox.className = 'box';
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse1;
+				path_name1=e.target.parentNode.parentNode.parentNode.parentNode.id;
+				path_name2=e.target.parentNode.parentNode.parentNode.id;
+				file_name=e.target.id;
+				httprequest.open('GET',"http://www.shoesshows.club/shoes"+"/"+path_name1+"/"+path_name2+"/"+file_name+"/"+file_name+".html"); 
+				httprequest.send();		
+			}
+			function handleResponse1(e) {
+				if(e.target.readyState == XMLHttpRequest.DONE && e.target.status==200){
+					myContent.innerHTML=e.target.responseText;
+				}
+				
+			}
+			function handleResponse2(e) {
+				if(e.target.readyState == XMLHttpRequest.DONE && e.target.status==200){
+					myNike.innerHTML+=e.target.responseText;
+					MyEnd.innerHTML="<h4>敬请期待</h4>";
+					more.className='last';
+					for (var i=0;i<document.querySelectorAll("#nike li").length;i++){
+						document.querySelectorAll("#nike li")[i].onclick = handleButtonPress;
+					}
+				}
+			}
+			function disappear() {
+				var myContent = document.getElementById('content');
+				var myBox = document.getElementById('box');
+				myContent.innerHTML='';
+				myBox.className='disappear';	
+			}
+			function getMore(e) {
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse2;
+				httprequest.open('GET','more_nike.html'); 
+				httprequest.send();		
+			}
+			more.onclick=getMore;
+			for (var i=0;i<document.querySelectorAll("#nike li").length;i++){
+				document.querySelectorAll("#nike li")[i].onclick = handleButtonPress;
+			}
+			myBox.onclick=disappear;
+				
+		</script> -->

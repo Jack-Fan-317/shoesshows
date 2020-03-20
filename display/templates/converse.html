@@ -1,0 +1,90 @@
+{% extends 'theme_for_display.html' %}
+{% load staticfiles %}
+
+{% block title %}<title>球鞋展示-CONVERSE</title>{% endblock title %}
+{% block rotation_picture %}
+	<li><img src="{% static 'img/converse/1.png' %}" alt=""></li>
+	<li><img src="{% static 'img/converse/2.png' %}" alt=""></li>
+	<li><img src="{% static 'img/converse/3.png' %}" alt=""></li>
+	<li><img src="{% static 'img/converse/4.png' %}" alt=""></li>
+	<li><img src="{% static 'img/converse/5.png' %}" alt=""></li>
+	<li><img src="{% static 'img/converse/6.png' %}" alt=""></li>
+	<li><img src="{% static 'img/converse/1.png' %}" alt=""></li>
+{% endblock rotation_picture %}
+{% block main_shoestype %}
+	<div id="converse">
+		<div id="chuck">
+			<h2>Chuck系列</h2>
+			<ul id="shoesList">
+				<li class="Chuck1">
+					<img src="{% static 'img/Chuck/chuck1-first.jpg' %}" id="chuck1">
+					<h3>chuck1</h3>
+				</li>
+				<li class="Chuck2">
+					<img src="{% static 'img/Chuck/chuck2-first.jpg' %}" id="chuck2">
+					<h3>chuck2</h3>
+				</li>
+				<li class="Chuck3">
+					<img src="{% static 'img/Chuck/chuck3-first.jpg' %}" id="chuck3">
+					<h3>chuck modern</h3>
+				</li>
+				<li class="Chuck4">
+					<img src="{% static 'img/Chuck/chuck4-first.jpg' %}" id="chuck4">
+					<h3>chuck x</h3>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock main_shoestype %}
+		<!-- <script src="../js/shoes_display.js"></script>
+		<script>
+			var myBox = document.getElementById('box');
+			var myContent = document.getElementById('content');
+			var more = document.getElementById('more');
+			var myConverse = document.getElementById('converse');
+			var MyEnd=document.getElementById('end');
+			function handleButtonPress(e) {
+				myBox.className = 'box';
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse1;
+				path_name1=e.target.parentNode.parentNode.parentNode.parentNode.id;
+				path_name2=e.target.parentNode.parentNode.parentNode.id;
+				file_name=e.target.id;
+				httprequest.open('GET',"http://www.shoesshows.club/shoes"+"/"+path_name1+"/"+path_name2+"/"+file_name+"/"+file_name+".html"); 
+				httprequest.send();		
+			}
+			function handleResponse1(e) {
+				if(e.target.readyState == XMLHttpRequest.DONE && e.target.status==200){
+					myContent.innerHTML=e.target.responseText;
+				}
+				
+			}
+			function handleResponse2(e) {
+				if(e.target.readyState == XMLHttpRequest.DONE && e.target.status==200){
+					myConverse.innerHTML+=e.target.responseText;
+					MyEnd.innerHTML="<h4>敬请期待</h4>";
+					more.className='last';
+					for (var i=0;i<document.querySelectorAll("#converse li").length;i++){
+						document.querySelectorAll("#converse li")[i].onclick = handleButtonPress;
+					}
+				}
+			}
+			function disappear() {
+				var myContent = document.getElementById('content');
+				var myBox = document.getElementById('box');
+				myContent.innerHTML='';
+				myBox.className='disappear';	
+			}
+			function getMore(e) {
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse2;
+				httprequest.open('GET','more_converse.html'); 
+				httprequest.send();		
+			}
+			more.onclick=getMore;
+			for (var i=0;i<document.querySelectorAll("#converse li").length;i++){
+				document.querySelectorAll("#converse li")[i].onclick = handleButtonPress;
+			}
+			myBox.onclick=disappear;
+
+		</script> -->
