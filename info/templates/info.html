@@ -13,7 +13,7 @@
                 <div class="header">
                     <div class="logo">
                         <h1>
-                            <a href="#"></a>
+                            <a href="{% static 'logo.png' %}"></a>
                         </h1>
                     </div>
                     <div class="navitems">
@@ -25,7 +25,7 @@
                                 <a href="">Converse</a>
                             </div>
                         </div>
-                        <a href="" class="show">球鞋资讯</a>
+                        <a href="{% url 'news:news' '1' %}" class="show">球鞋资讯</a>
                         <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
                         <a href="{% url 'index:index' %}" class="show">回到首页</a>
                     </div>

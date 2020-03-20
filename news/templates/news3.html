@@ -1,0 +1,104 @@
+{% extends 'theme.html' %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        {% block css %}<link rel="stylesheet" href="{% static 'css/news.css' %}">{% endblock css %}
+        {% block title %}<title>球鞋资讯</title>{% endblock title %}
+    </head>
+    <body>
+        {% block body %}
+            <header>
+                <div class="header">
+                    <div class="logo">
+                        <h1>
+                            <a href="{% static 'logo.png' %}"></a>
+                        </h1>
+                    </div>
+                    <div class="navitems">
+                        <a href="{% url 'info:info' %}" class="show">网站介绍</a>
+                        <div class="show" id="show">球鞋展示
+                            <div class="frame1" id="frame">
+                                <a href="">Nike</a>
+                                <a href="">Adidas</a>
+                                <a href="">Converse</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'news:news' '1' %}" class="now show">球鞋资讯</a>
+                        <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
+                        <a href="{% url 'index:index' %}" class="show">回到首页</a>
+                    </div>
+                </div>
+            </header>
+            <div class="border"></div>
+            <main>
+                <div class="main">
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new11.jpg' %}">
+                                <figcaption class="title">
+                                城市户外主题！WILD THINGS x BEAUTY &amp; YOUTH 全新合作系列释出
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">22小时前</span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new12.jpg' %}">
+                                <figcaption class="title">
+                                外形酷似 Yeezy 700 ！EQT Solution 全新配色即将发售！
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">22小时前</span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new13.jpg' %}">
+                                <figcaption class="title">
+                                独特系带方式！Fear of God Essentials x Converse Chuck 70 联名本周亮相
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">22小时前</span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new14.jpg' %}">
+                                <figcaption class="title">
+                                还有白色版本！藤原浩晒出 Fragment x Moncler x Converse 全新联名
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">22小时前</span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new15.jpg' %}">
+                                <figcaption class="title">
+                                本月底登场！重磅 Travis Scott x Nike SB Dunk Low 联名不要错过
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">23小时前</span>
+                    </div>
+            </main>
+            <footer>
+                <div class="footer">
+                    <div id="pageList">
+                        <a href="{% url 'news:news' '1' %}">1</a>
+                        <a href="{% url 'news:news' '2' %}">2</a>
+                        <a href="{% url 'news:news' '3' %}" style="background-color: rgba(0,0,0,0.4);">3</a>
+                    </div>
+                </div>
+            </footer>
+        <script src="{% static 'js/news.js' %}"></script>
+        {% endblock body %}
+    </body>
+</html>

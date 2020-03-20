@@ -1,0 +1,105 @@
+{% extends 'theme.html' %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        {% block css %}<link rel="stylesheet" href="{% static 'css/news.css' %}">{% endblock css %}
+        {% block title %}<title>球鞋资讯</title>{% endblock title %}
+    </head>
+    <body>
+        {% block body %}
+            <header>
+                <div class="header">
+                    <div class="logo">
+                        <h1>
+                            <a href="{% static 'logo.png' %}"></a>
+                        </h1>
+                    </div>
+                    <div class="navitems">
+                        <a href="{% url 'info:info' %}" class="show">网站介绍</a>
+                        <div class="show" id="show">球鞋展示
+                            <div class="frame1" id="frame">
+                                <a href="">Nike</a>
+                                <a href="">Adidas</a>
+                                <a href="">Converse</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'news:news' '1' %}" class="now show">球鞋资讯</a>
+                        <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
+                        <a href="{% url 'index:index' %}" class="show">回到首页</a>
+                    </div>
+                </div>
+            </header>
+            <div class="border"></div>
+            <main>
+                <div class="main">
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new6.jpg' %}">
+                                <figcaption class="title">
+                                适合小仙女上脚！超美樱花粉 Air Jordan 1 Mid 即将登场
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">4小时前</span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new7.jpg' %}">
+                                <figcaption class="title">
+                                不止 Air Force 1 ！Supreme 与 Nike 还有新作，年底登场！
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">5小时前</span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new8.jpg' %}">
+                                <figcaption class="title">
+                                可撕鞋面+ 3M 反光设计！这双 Air Max 98 规格不凡
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">5小时前</span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new9.jpg' %}">
+                                <figcaption class="title">
+                                晒出你的壁纸
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">5小时前</span>
+                    </div>
+                    <div class="pic">
+                        <a target=_blank href="#">
+                            <figure>
+                                <img class="lazy" src="{% static 'img/news/new10.jpg' %}">
+                                <figcaption class="title">
+                                拥有威士忌“余香”！HANON x MIZUNO 联名鞋款规格极高
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <span class="tip-date">21小时前</span>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer">
+                    <div id="pageList">
+                        <a href="{% url 'news:news' '1' %}">1</a>
+                        <a href="{% url 'news:news' '2' %}" style="background-color: rgba(0,0,0,0.4);">2</a>
+                        <a href="{% url 'news:news' '3' %}">3</a>
+                    </div>
+                </div>
+            </footer>
+        <script src="{% static 'js/news.js' %}"></script>
+        {% endblock body %}
+    </body>
+</html>

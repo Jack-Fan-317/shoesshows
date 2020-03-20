@@ -26,5 +26,5 @@ urlpatterns = [
     path('',include(('index.urls','index'),namespace='index')),
     path('contact/',include(('contact.urls','contact'),namespace='contact')),
     path('info',include(('info.urls','info'),namespace='info')),
-    # path('',include(('index.urls','index'),namespace='index')),
+    path('news',include(('news.urls','news'),namespace='news')),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
