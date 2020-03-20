@@ -1,0 +1,115 @@
+{% extends 'theme.html' %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        {% block css %}<link rel="stylesheet" href="{% static 'css/info.css' %}">{% endblock css %}
+        {% block title %}<title>网站介绍</title>{% endblock title %}
+    </head>
+    <body>
+        {% block body %}
+            <div id="topAnchor"></div>
+            <header>
+                <div class="header">
+                    <div class="logo">
+                        <h1>
+                            <a href="#"></a>
+                        </h1>
+                    </div>
+                    <div class="navitems">
+                        <a href="{% url 'info:info' %}" class="now show">网站介绍</a>
+                        <div class="show" id="show">球鞋展示
+                            <div class="frame1" id="frame">
+                                <a href="">Nike</a>
+                                <a href="">Adidas</a>
+                                <a href="">Converse</a>
+                            </div>
+                        </div>
+                        <a href="" class="show">球鞋资讯</a>
+                        <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
+                        <a href="{% url 'index:index' %}" class="show">回到首页</a>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="main">
+                    <div class="play">
+                        <div id="wrap">
+                            <img src="{% static 'img/info/a.png' %}" alt="" id="p01">
+                            <img src="{% static 'img/info/b.png' %}" alt="" id="p02">
+                            <img src="{% static 'img/info/c.png' %}" alt="" id="p03">
+                            <img src="{% static 'img/info/d.png' %}" alt="" id="p04">
+                            <img src="{% static 'img/info/e.png' %}" alt="" id="p05">
+                            <img src="{% static 'img/info/f.png' %}" alt="" id="p06">
+                        </div>
+                        <h4>点击图片可播放动画</h4>
+                    </div>
+                    <div class="article">
+                        <div class="article1">
+                            <div class="title_left">
+                                <h2>设计理念</h2>
+                            </div>
+                            <div class="content_left">
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;更好的视觉展示</p>
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最实用球鞋信息</p>
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最新的球鞋资讯</p>
+                            </div>
+                            <img class="img_right" src="{% static 'img/info/1.jpg' %}" alt="图">
+                        </div>
+                        <div class="article2">
+                            <img class="img_left" src="{% static 'img/info/2.jpg' %}" alt="图">
+                            <div class="title_right">
+                                <h2>适宜人群</h2>
+                            </div>
+                            <div class="content_right">
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;适合各个年龄段</p>
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;想了解各种球鞋的新闻资讯</p>
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;想了解每款球鞋的版型与简介</p>
+                            </div>
+                        </div>
+                        <div class="article3">
+                            <div class="title_left">
+                                <h2>网站内容</h2>
+                            </div>
+                            <div class="content_left">
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;动画效果酷炫展示</p>
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球鞋的展示与介绍</p>
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各式球鞋实时资讯</p>
+                            </div>
+                            <img class="img_right" src="{% static 'img/info/3.jpg' %}" alt="图">
+                        </div>
+                        <div class="article4">
+                            <img class="img_left" src="{% static 'img/info/4.jpg' %}" alt="图">
+                            <div class="title_right">
+                                <h2>网站目标</h2>
+                            </div>
+                            <div class="content_right">
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;加入更多球鞋以供参考</p>
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实现球鞋资讯实时更新</p>
+                                <br><br><br><br><br><br>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;联系我们的用户及时反馈</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer">
+                    <a class="anchor" href="#topAnchor">回到顶部</a>
+                </div>
+            </footer>
+            <script src="{% static 'js/info.js' %}"></script>
+        {% endblock body %}
+    </body>
+</html>

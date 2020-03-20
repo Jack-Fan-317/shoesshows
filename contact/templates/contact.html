@@ -17,7 +17,7 @@
                         </h1>
                     </div>
                     <div class="navitems">
-                        <a href="" class="show">网站介绍</a>
+                        <a href="{% url 'info:info' %}" class="show">网站介绍</a>
                         <div class="show" id="show">球鞋展示
                             <div class="frame1" id="frame">
                                 <a href="">Nike</a>
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <a href="" class="show">球鞋资讯</a>
-                        <a href="" class="now show">联系我们</a>
+                        <a href="{% url 'contact:contact' %}" class="now show">联系我们</a>
                         <a href="{% url 'index:index' %}" class="show">回到首页</a>
                     </div>
                 </div>
