@@ -1,105 +1,30 @@
-{% extends 'theme.html' %}
-<!DOCTYPE html>
+{% extends 'theme_for_news.html' %}
 {% load staticfiles %}
-<html lang="en">
-    <head>
-        {% block css %}<link rel="stylesheet" href="{% static 'css/news.css' %}">{% endblock css %}
-        {% block title %}<title>球鞋资讯</title>{% endblock title %}
-    </head>
-    <body>
-        {% block body %}
-            <header>
-                <div class="header">
-                    <div class="logo">
-                        <h1>
-                            <a href="{% static 'logo.png' %}"></a>
-                        </h1>
-                    </div>
-                    <div class="navitems">
-                        <a href="{% url 'info:info' %}" class="show">网站介绍</a>
-                        <div class="show" id="show">球鞋展示
-                            <div class="frame1" id="frame">
-                                <a href="">Nike</a>
-                                <a href="">Adidas</a>
-                                <a href="">Converse</a>
-                            </div>
-                        </div>
-                        <a href="{% url 'news:news' '1' %}" class="now show">球鞋资讯</a>
-                        <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
-                        <a href="{% url 'index:index' %}" class="show">回到首页</a>
-                    </div>
-                </div>
-            </header>
-            <div class="border"></div>
-            <main>
-                <div class="main">
-                    <div class="pic">
-                        <a target=_blank href="#">
-                            <figure>
-                                <img class="lazy" src="{% static 'img/news/new6.jpg' %}">
-                                <figcaption class="title">
-                                适合小仙女上脚！超美樱花粉 Air Jordan 1 Mid 即将登场
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <span class="tip-date">4小时前</span>
-                    </div>
-                    <div class="pic">
-                        <a target=_blank href="#">
-                            <figure>
-                                <img class="lazy" src="{% static 'img/news/new7.jpg' %}">
-                                <figcaption class="title">
-                                不止 Air Force 1 ！Supreme 与 Nike 还有新作，年底登场！
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <span class="tip-date">5小时前</span>
-                    </div>
-                    <div class="pic">
-                        <a target=_blank href="#">
-                            <figure>
-                                <img class="lazy" src="{% static 'img/news/new8.jpg' %}">
-                                <figcaption class="title">
-                                可撕鞋面+ 3M 反光设计！这双 Air Max 98 规格不凡
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <span class="tip-date">5小时前</span>
-                    </div>
-                    <div class="pic">
-                        <a target=_blank href="#">
-                            <figure>
-                                <img class="lazy" src="{% static 'img/news/new9.jpg' %}">
-                                <figcaption class="title">
-                                晒出你的壁纸
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <span class="tip-date">5小时前</span>
-                    </div>
-                    <div class="pic">
-                        <a target=_blank href="#">
-                            <figure>
-                                <img class="lazy" src="{% static 'img/news/new10.jpg' %}">
-                                <figcaption class="title">
-                                拥有威士忌“余香”！HANON x MIZUNO 联名鞋款规格极高
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <span class="tip-date">21小时前</span>
-                    </div>
-                </div>
-            </main>
-            <footer>
-                <div class="footer">
-                    <div id="pageList">
-                        <a href="{% url 'news:news' '1' %}">1</a>
-                        <a href="{% url 'news:news' '2' %}" style="background-color: rgba(0,0,0,0.4);">2</a>
-                        <a href="{% url 'news:news' '3' %}">3</a>
-                    </div>
-                </div>
-            </footer>
-        <script src="{% static 'js/news.js' %}"></script>
-        {% endblock body %}
-    </body>
-</html>
+
+{% block img_lazy_1 %}<img class="lazy" src="{% static 'img/news/new6.jpg' %}">{% endblock img_lazy_1 %}
+{% block figcaption_title_1 %}适合小仙女上脚！超美樱花粉 Air Jordan 1 Mid 即将登场{% endblock figcaption_title_1 %}
+{% block span_tip-date_1 %}4小时前{% endblock span_tip-date_1 %}
+
+{% block img_lazy_2 %}<img class="lazy" src="{% static 'img/news/new7.jpg' %}">{% endblock img_lazy_2 %}
+{% block figcaption_title_2 %}不止 Air Force 1 ！Supreme 与 Nike 还有新作，年底登场！{% endblock figcaption_title_2 %}
+{% block span_tip-date_2 %}5小时前{% endblock span_tip-date_2 %}
+
+{% block img_lazy_3 %}<img class="lazy" src="{% static 'img/news/new8.jpg' %}">{% endblock img_lazy_3 %}
+{% block figcaption_title_3 %}可撕鞋面+ 3M 反光设计！这双 Air Max 98 规格不凡{% endblock figcaption_title_3 %}
+{% block span_tip-date_3 %}5小时前{% endblock span_tip-date_3 %}
+
+{% block img_lazy_4 %}<img class="lazy" src="{% static 'img/news/new9.jpg' %}">{% endblock img_lazy_4 %}
+{% block figcaption_title_4 %}晒出你的壁纸{% endblock figcaption_title_4 %}
+{% block span_tip-date_4 %}5小时前{% endblock span_tip-date_4 %}
+
+{% block img_lazy_5 %}<img class="lazy" src="{% static 'img/news/new10.jpg' %}">{% endblock img_lazy_5 %}
+{% block figcaption_title_5 %}拥有威士忌“余香”！HANON x MIZUNO 联名鞋款规格极高{% endblock figcaption_title_5 %}
+{% block span_tip-date_5 %}21小时前{% endblock span_tip-date_5 %}
+            
+{% block js %}
+<script>
+    var news2 = document.getElementById('newsPage2');
+    news2.style.backgroundColor = 'rgba(0,0,0,0.3)';
+</script>
+{% endblock js %}
+    
