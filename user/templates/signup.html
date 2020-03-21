@@ -1,1 +1,14 @@
-12345
+{% extends 'theme_for_user.html' %}
+
+{% block user_main %}
+<form action="{% url 'user:signup' %}" class="contact-form" method="POST">  
+<!-- 防止跨站点攻击 -->
+{% csrf_token %}
+    <input type="text" name='username' class="contact-form-text" id="userName" placeholder="Please input your username">
+    <div class='error'>{{ username_error }}</div>
+    <input type="password" name='password_initial' class="contact-form-text" id="password" placeholder="Please input your password">
+    <input type="password" name='password_confirm' class="contact-form-text" id="password" placeholder="Please confirm your password">
+    <div class='error'>{{ password_error }}</div>
+    <input type="submit" class="contact-form-btn" value="Signup Now">
+</form> 
+{% endblock user_main %}

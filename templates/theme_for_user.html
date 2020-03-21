@@ -1,0 +1,33 @@
+{% extends 'theme.html' %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        {% block css %}<link rel="stylesheet" href="{% static 'css/user.css' %}">{% endblock css %}
+        {% block title %}<title>登录页面</title>{% endblock title %}
+    </head>
+    <body>
+        {% block body_for_user %}
+            <header>
+                <div class="header">
+                    <div class="logo">
+                        <h1>
+                            <a href="{% static 'img/user/logo.png' %}"><img src="{% static 'img/user/logo.png' %}" alt="LOGO"></a>
+                        </h1>
+                    </div>
+                    <h2 class='title'>Login</h2>
+                    <a href="{% url 'index:index' %}" class='return'>返回首页</a>
+                </div>
+            </header>
+            <main>
+                <div class="main">
+                    <div class="contact-section">
+                        <div class="border"></div>
+                        {% block user_main %}{% endblock user_main %}
+                    </div>
+                </div>
+            </main>
+        <script src="{% static 'js/user.js' %}"></script>
+        {% endblock body_for_user %}
+    </body>
+</html>

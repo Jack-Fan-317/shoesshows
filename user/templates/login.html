@@ -1,43 +1,12 @@
-{% extends 'theme.html' %}
-<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
-    <head>
-        {% block css %}<link rel="stylesheet" href="{% static 'css/user.css' %}">{% endblock css %}
-        {% block title %}<title>登录页面</title>{% endblock title %}
-    </head>
-    <body>
-        {% block body_for_user %}
-            <header>
-                <div class="header">
-                    <div class="logo">
-                        <h1>
-                            <a href="{% static 'img/user/logo.png' %}"><img src="{% static 'img/user/logo.png' %}" alt="LOGO"></a>
-                        </h1>
-                    </div>
-                    <h2 class='title'>Login</h2>
-                    <div class='user'>  
-                        <a href="{% url 'user:login' %}">登录</a>&nbsp;&nbsp;&nbsp;
-                        <a href="{% url 'user:signup' %}">注册</a>
-                    </div>
-                </div>
-            </header>
-            <main>
-                <div class="main">
-                    <div class="contact-section">
-                        <div class="border"></div>
-                        <form action="{% url 'user:login' %}" class="contact-form" method="POST">  
-                        <!-- 防止跨站点攻击 -->
-                        {% csrf_token %}
-                            <input type="text" class="contact-form-text" id="userName" placeholder="Please input your username">
-                            <input type="password" class="contact-form-text" id="password" placeholder="Please input your password">
-                            {{ 错误 }}
-                            <input type="submit" class="contact-form-btn" value="Login">
-                        </form>
-                    </div>
-                </div>
-            </main>
-        <script src="{% static 'js/user.js' %}"></script>
-        {% endblock body_for_user %}
-    </body>
-</html>
+{% extends 'theme_for_user.html' %}
+
+{% block user_main %}
+<form action="{% url 'user:login' %}" class="contact-form" method="POST">  
+<!-- 防止跨站点攻击 -->
+{% csrf_token %}
+    <input type="text" name='username' class="contact-form-text" id="userName" placeholder="Please input your username">
+    <input type="password" name='password' class="contact-form-text" id="password" placeholder="Please input your password">
+    <div class='error'>{{ error }}</div>
+    <input type="submit" class="contact-form-btn" value="Login">
+</form>
+{% endblock user_main %}
