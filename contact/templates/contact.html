@@ -4,10 +4,10 @@
 <html lang="en">
     <head>
         {% block css %}<link rel="stylesheet" href="{% static 'css/contact_us.css' %}">{% endblock css %}
-        {% block title %}<title>contact us</title>{% endblock title %}
+        {% block title %}<title>联系我们</title>{% endblock title %}
     </head>
     <body>
-        {% block body_for_contact %}
+        {% block body %}
             <header>
                 <div class="header">
                     <h1 class="title">Contact Us</h1>
@@ -16,9 +16,19 @@
                             <a href="{% static 'img/contact_us/logo.png' %}"><img src="{% static 'img/contact_us/logo.png' %}" alt="LOGO"></a>
                         </h1>
                     </div>
-                    <div class='user'>  
-                        <a href="">登录</a>&nbsp;&nbsp;&nbsp;
-                        <a href="">注册</a>
+                    <div class='user'>
+                        <!-- 若用户已登录 -->
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'contact:contact' %}">发布</a>&nbsp;&nbsp;&nbsp;
+                            <a href="Javascript:{document.getElementById('logout').submit()}">退出</a>
+                            <form id="logout" method="POST" action="{% url 'user:logout' %}">
+                                {% csrf_token %}
+                                <input type="hidden">
+                            </form> 
+                        {% else %}
+                            <a href="{% url 'user:login' %}">登录</a>&nbsp;&nbsp;&nbsp;
+                            <a href="{% url 'user:signup' %}">注册</a>
+                        {% endif %} 
                     </div>
                     <div class="navitems">
                         <a href="{% url 'info:info' %}" class="show">网站介绍</a>
@@ -59,7 +69,7 @@
                     </div>
                 </div>
             </main>
-        <script src="{% static 'js/contact_us.js' %}"></script>
-        {% endblock body_for_contact %}
+            <script src="{% static 'js/contact_us.js' %}"></script>
+        {% endblock body %}
     </body>
 </html>

@@ -11,58 +11,58 @@
         {% block title %}<title>shoes shows-品牌鞋类展示-资讯一览、视觉盛宴！</title>{% endblock title %}
     </head>
     <body>
-    {% block body_for_index %}
-        <header>
-            <div class="w header">
-                <div class="logo">
-                    <h1>
-                        <a href="{% static 'img/index/logo.png' %}"><img src="{% static 'img/index/logo.png' %}" alt="LOGO"></a>
-                    </h1>
-                </div>
-                <div class='user'>
-                    <!-- 若用户已登录 -->
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'contact:contact' %}">发布</a>&nbsp;&nbsp;&nbsp;
-                    <a href="Javascript:{document.getElementById('logout').submit()}">退出</a>
-                    <form id="logout" method="POST" action="{% url 'user:logout' %}">
-                        {% csrf_token %}
-                        <input type="hidden">
-                    </form> 
-                    {% else %}
-                    <a href="{% url 'user:login' %}">登录</a>&nbsp;&nbsp;&nbsp;
-                    <a href="{% url 'user:signup' %}">注册</a>
-                    {% endif %} 
-                </div>
-                <div class="navitems">
-                    <a href="{% url 'info:info' %}" class="show">网站介绍</a>
-                    <div class="show" id="show">球鞋展示
-                        <div class="frame1" id="frame">
-                            <a href="{% url 'display:display' 'nike' %}">Nike</a>
-                            <a href="{% url 'display:display' 'adidas' %}">Adidas</a>
-                            <a href="{% url 'display:display' 'converse' %}">Converse</a>
-                        </div>
+        {% block body %}
+            <header>
+                <div class="w header">
+                    <div class="logo">
+                        <h1>
+                            <a href="{% static 'img/index/logo.png' %}"><img src="{% static 'img/index/logo.png' %}" alt="LOGO"></a>
+                        </h1>
                     </div>
-                    <a href="{% url 'news:news' '1' %}" class="show">球鞋资讯</a>
-                    <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
+                    <div class='user'>
+                        <!-- 若用户已登录 -->
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'contact:contact' %}">发布</a>&nbsp;&nbsp;&nbsp;
+                            <a href="Javascript:{document.getElementById('logout').submit()}">退出</a>
+                            <form id="logout" method="POST" action="{% url 'user:logout' %}">
+                                {% csrf_token %}
+                                <input type="hidden">
+                            </form> 
+                        {% else %}
+                            <a href="{% url 'user:login' %}">登录</a>&nbsp;&nbsp;&nbsp;
+                            <a href="{% url 'user:signup' %}">注册</a>
+                        {% endif %} 
+                    </div>
+                    <div class="navitems">
+                        <a href="{% url 'info:info' %}" class="show">网站介绍</a>
+                        <div class="show" id="show">球鞋展示
+                            <div class="frame1" id="frame">
+                                <a href="{% url 'display:display' 'nike' %}">Nike</a>
+                                <a href="{% url 'display:display' 'adidas' %}">Adidas</a>
+                                <a href="{% url 'display:display' 'converse' %}">Converse</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'news:news' '1' %}" class="show">球鞋资讯</a>
+                        <a href="{% url 'contact:contact' %}" class="show">联系我们</a>
+                    </div>
                 </div>
-            </div>
-        </header>
-        <main>
-            <div class="main">
-                <div id="album">
-                    <img src="{% static 'img/index/af1.png' %}"/>
-                    <img src="{% static 'img/index/b.png' %}"/>
-                    <img src="{% static 'img/index/c.png' %}"/>
-                    <img src="{% static 'img/index/e.png' %}"/>
-                    <img src="{% static 'img/index/f.png' %}"/>
-                    <img src="{% static 'img/index/g.png' %}"/>
-                    <img src="{% static 'img/index/h.png' %}"/>
-                    <img src="{% static 'img/index/i.png' %}"/>
+            </header>
+            <main>
+                <div class="main">
+                    <div id="album">
+                        <img src="{% static 'img/index/af1.png' %}"/>
+                        <img src="{% static 'img/index/b.png' %}"/>
+                        <img src="{% static 'img/index/c.png' %}"/>
+                        <img src="{% static 'img/index/e.png' %}"/>
+                        <img src="{% static 'img/index/f.png' %}"/>
+                        <img src="{% static 'img/index/g.png' %}"/>
+                        <img src="{% static 'img/index/h.png' %}"/>
+                        <img src="{% static 'img/index/i.png' %}"/>
+                    </div>
                 </div>
-            </div>
-        </main>
-        <script src="{% static 'js/index.js' %}"></script>
-    {% endblock body_for_index %}
+            </main>
+            <script src="{% static 'js/index.js' %}"></script>
+        {% endblock body %}
     </body>
 </html>
     
