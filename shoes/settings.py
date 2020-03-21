@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'index',
     'info',
     'news',
-    'products',
     'user',
 ]
 
@@ -136,7 +135,6 @@ STATIC_DIRS = [     # 静态资源文件夹
     os.path.join(BASE_DIR,'index/static'),
     os.path.join(BASE_DIR,'info/static'),
     os.path.join(BASE_DIR,'news/static'),
-    os.path.join(BASE_DIR,'products/static'),
     os.path.join(BASE_DIR,'user/static'),
 ]
 
