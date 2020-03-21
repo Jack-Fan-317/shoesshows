@@ -28,4 +28,5 @@ urlpatterns = [
     path('display/',include(('display.urls','display'),namespace='display')),
     path('news/',include(('news.urls','news'),namespace='news')),
     path('contact/',include(('contact.urls','contact'),namespace='contact')),
+    path('user/',include(('user.urls','user'),namespace='user')),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
