@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from .models import Product
+from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 
 # Create your views here.
 def signup(request):
@@ -42,3 +45,34 @@ def logout(request):
     if request.method == 'POST':
         user = auth.logout(request)
         return redirect('index:index')
+
+
+@login_required  # 仅当用户登录了才能跳转到此页面，哪怕直接输入/user/publish
+def publish(request):
+    if request.method == 'GET':
+        return render(request, 'publish.html')
+    elif request.method == 'POST':
+        title = request.POST['shoes_title']
+        intro = request.POST['shoes_introduce']
+        url = request.POST['shoes_link']
+        try:    # 用户未上传图片，会报错
+            icon = request.FILES['shoes_small_picture']
+            image = request.FILES['shoes_big_picture']
+
+            # 将上述用户提交的信息存放到数据库
+            product = Product()
+            product.title = title
+            product.intro = intro
+            product.url = url
+            product.icon = icon
+            product.image = image
+
+            product.pub_date = timezone.datetime.now()  # 记录用户点击发布按钮时的时间
+            product.publish_user = request.user
+
+            product.save()
+
+            return redirect('index:index')
+            
+        except Exception as err:
+            return render(request,'publish.html',{'picture_error':'请上传图片'})
