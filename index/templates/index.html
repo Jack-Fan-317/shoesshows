@@ -31,7 +31,8 @@
                         {% else %}
                             <a href="{% url 'user:login' %}">登录</a>&nbsp;&nbsp;&nbsp;
                             <a href="{% url 'user:signup' %}">注册</a>
-                        {% endif %} 
+                        {% endif %}
+                        <a href="{% url 'user:publish_list' %}">网友发布</a>
                     </div>
                     <div class="navitems">
                         <a href="{% url 'info:info' %}" class="show">网站介绍</a>

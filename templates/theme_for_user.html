@@ -18,14 +18,7 @@
                     <a href="{% url 'index:index' %}" class='return'>返回首页</a>
                 </div>
             </header>
-            <main>
-                <div class="main">
-                    <div class="contact-section">
-                        <div class="border"></div>
-                        {% block user_main %}{% endblock user_main %}
-                    </div>
-                </div>
-            </main>
+            {% block user_main %}{% endblock user_main %}
             <script src="{% static 'js/user.js' %}"></script>
         {% endblock body %}
     </body>

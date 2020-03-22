@@ -3,14 +3,22 @@
 {% block title %}<title>注册界面</title>{% endblock title %}
 {% block psg_title %}<h2 class='title'>signup</h2>{% endblock psg_title %}
 {% block user_main %}
-<form action="{% url 'user:signup' %}" class="contact-form" method="POST">  
-<!-- 防止跨站点攻击 -->
-{% csrf_token %}
-    <input type="text" name='username' class="contact-form-text" id="userName" placeholder="Please input your username">
-    <div class='error'>{{ username_error }}</div>
-    <input type="password" name='password_initial' class="contact-form-text" id="password" placeholder="Please input your password">
-    <input type="password" name='password_confirm' class="contact-form-text" id="password" placeholder="Please confirm your password">
-    <div class='error'>{{ password_error }}</div>
-    <input type="submit" class="contact-form-btn" value="Signup Now">
-</form> 
+<main>
+    <div class="main">
+        <div class="contact-section">
+            <div class="border"></div>
+            <form action="{% url 'user:signup' %}" class="contact-form" method="POST">  
+            <!-- 防止跨站点攻击 -->
+            {% csrf_token %}
+                <input type="text" name='username' class="contact-form-text" id="userName" placeholder="Please input your username">
+                <div class='error'>{{ username_error }}</div>
+                <input type="password" name='password_initial' class="contact-form-text" id="password" placeholder="Please input your password">
+                <input type="password" name='password_confirm' class="contact-form-text" id="password" placeholder="Please confirm your password">
+                <div class='error'>{{ password_error }}</div>
+                <input type="submit" class="contact-form-btn" value="Signup Now">
+            </form>
+        </div>
+    </div>
+</main>
+
 {% endblock user_main %}

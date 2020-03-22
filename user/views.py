@@ -66,7 +66,7 @@ def publish(request):
             product.url = url
             product.icon = icon
             product.image = image
-
+            # product.votes = votes
             product.pub_date = timezone.datetime.now()  # 记录用户点击发布按钮时的时间
             product.publish_user = request.user
 
@@ -76,3 +76,8 @@ def publish(request):
             
         except Exception as err:
             return render(request,'publish.html',{'picture_error':'请上传图片'})
+
+
+def publish_list(request):
+    products = Product.objects
+    return render(request, 'publish_list.html',{'products':products})

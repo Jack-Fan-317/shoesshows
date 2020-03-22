@@ -1,0 +1,22 @@
+{% extends 'theme_for_user.html' %}
+
+{% block title %}<title>ALL SHOWS</title>{% endblock title %}
+{% block psg_title %}<h2 class='title'>网友发布</h2>{% endblock psg_title %}
+{% block user_main %}
+    <main>
+        <div class="main_publish">
+            <div class="border_publish"></div>
+            <div class='shoes_list_frame'>
+                <ul class='shoes_list'>
+                    {% for product in products.all %}
+                    <li class='shoes_frame'>
+                        <img src="{{ product.icon.url }}">
+                        <h3 class='publish_user'>{{ product.publish_user }}</h3>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </main>
+{% endblock user_main %}
+    
