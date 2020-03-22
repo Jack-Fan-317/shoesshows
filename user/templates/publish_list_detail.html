@@ -1,0 +1,21 @@
+{% extends 'theme_for_user.html' %}
+
+{% block title %}<title>ONE SHOW</title>{% endblock title %}
+{% block psg_title %}<h2 class='title'>{{ product.publish_user }}的发布</h2>{% endblock psg_title %}
+{% block user_main %}
+    <main>
+        <div class="main_publish_detail">
+            <div class="border_publish"></div>
+            <div class='shoes_list_frame'>
+                <h4 class='publish_title'>球鞋： {{ product.title }}</h4>
+                <h5 class='publish_user'>发布人： {{ product.publish_user }}</h5>
+                <h5 class='publish_date'>发布时间：{{ product.pub_date }}</h5>
+                <h5 class='publish_votes'>得票数：{{ product.votes }}</h5>
+               
+                <img src="{{ product.image.url }}" class='big_picture'>
+                <h5 class='publish_intro'>简介：{{ product.intro }}</h5>
+                
+            </div>
+        </div>
+    </main>
+{% endblock user_main %}

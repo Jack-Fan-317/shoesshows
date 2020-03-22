@@ -9,10 +9,11 @@
             <div class='shoes_list_frame'>
                 <ul class='shoes_list'>
                     {% for product in products.all %}
-                    <li class='shoes_frame'>
-                        <img src="{{ product.icon.url }}">
-                        <h3 class='publish_user'>{{ product.publish_user }}</h3>
-                    </li>
+                    <a href="{{ product.id }}" class='shoes_frame'>
+                        <img src="{{ product.icon.url }}" class='small_picture'>
+                        <h3 class='publish_title'>球鞋： {{ product.title }}</h3>
+                        <h3 class='publish_user'>用户： {{ product.publish_user }}</h3>
+                    </a>
                     {% endfor %}
                 </ul>
             </div>

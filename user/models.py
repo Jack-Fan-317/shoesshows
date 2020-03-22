@@ -4,9 +4,8 @@ from django.contrib.auth.models import User
 # 模型类
 class Product(models.Model):
     # 表字段
-    title = models.CharField(default="例：抖音-短视频记录美好生活", max_length=50)
-    intro = models.TextField(default="在这里写APP介绍")
-    url = models.CharField(default="http://", max_length=100)  
+    title = models.CharField(default="例：AJ1", max_length=50)
+    intro = models.TextField(default="在这里写球鞋介绍")
     icon = models.ImageField(default="default_icon.png",upload_to='images/') 
     image = models.ImageField(default="default_image.png",upload_to='images/')
     

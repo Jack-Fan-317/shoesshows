@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import Product
@@ -54,7 +54,6 @@ def publish(request):
     elif request.method == 'POST':
         title = request.POST['shoes_title']
         intro = request.POST['shoes_introduce']
-        url = request.POST['shoes_link']
         try:    # 用户未上传图片，会报错
             icon = request.FILES['shoes_small_picture']
             image = request.FILES['shoes_big_picture']
@@ -63,10 +62,8 @@ def publish(request):
             product = Product()
             product.title = title
             product.intro = intro
-            product.url = url
             product.icon = icon
             product.image = image
-            # product.votes = votes
             product.pub_date = timezone.datetime.now()  # 记录用户点击发布按钮时的时间
             product.publish_user = request.user
 
@@ -81,3 +78,8 @@ def publish(request):
 def publish_list(request):
     products = Product.objects
     return render(request, 'publish_list.html',{'products':products})
+
+
+def publish_list_detail(request, product_id):
+    product = get_object_or_404(Product, pk=product_id) # 主键形式获取Product表中的对应ID
+    return render(request, 'publish_list_detail.html',{'product':product})
