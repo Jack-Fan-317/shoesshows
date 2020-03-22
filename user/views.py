@@ -4,6 +4,8 @@ from django.contrib import auth
 from .models import Product
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.contrib import messages
+
 
 # Create your views here.
 def signup(request):
@@ -39,6 +41,7 @@ def login(request):
         else:
             auth.login(request, user)
             return redirect('index:index')
+            messages.success(request,"哈哈哈哈")
 
 
 def logout(request):
