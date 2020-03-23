@@ -81,6 +81,11 @@
                         <div id="end" class="end"></div>
                     </div>
                 </footer>
+                {% if messages %}
+                {% for msg in messages %}
+                <script>alert('{{ msg.message }}');</script>
+                {% endfor %}
+                {% endif %}
                 <script src="{% static 'js/display.js' %}"></script>
                 <!-- <script src="{% static 'js/loadmore.js' %}"></script> -->
             {% endblock body %}

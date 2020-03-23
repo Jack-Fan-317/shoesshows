@@ -126,6 +126,11 @@
                     </div>
                 </div>
             </footer>
+            {% if messages %}
+            {% for msg in messages %}
+            <script>alert('{{ msg.message }}');</script>
+            {% endfor %}
+            {% endif %}
             <script src="{% static 'js/news.js' %}"></script>
         {% endblock body %}
     </body>

@@ -125,6 +125,11 @@
                     <a class="anchor" href="#topAnchor">回到顶部</a>
                 </div>
             </footer>
+            {% if messages %}
+            {% for msg in messages %}
+            <script>alert('{{ msg.message }}');</script>
+            {% endfor %}
+            {% endif %}
             <script src="{% static 'js/info.js' %}"></script>
         {% endblock body %}
     </body>

@@ -24,6 +24,7 @@ def signup(request):
             if password1 == password2:
                 User.objects.create_user(username=user_name, password=password1)
                 # 重定向到另一个页面
+                messages.success(request,"注册成功")
                 return redirect('index:index')
             else:
                 return render(request, 'signup.html', {'password_error':'您输入的密码不一致'})
@@ -40,8 +41,8 @@ def login(request):
             return render(request, 'login.html', {'error':'您输入的用户名或密码不正确'})
         else:
             auth.login(request, user)
+            messages.success(request,"登录成功")
             return redirect('index:index')
-            messages.success(request,"哈哈哈哈")
 
 
 def logout(request):
