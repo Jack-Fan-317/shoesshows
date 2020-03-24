@@ -8,3 +8,7 @@ def shoes_list(request, brand):
 
 def shoes_detail(request, brand, series, shoesname):
     return render(request, shoesname+'.html')
+
+
+def brand_more(request, brand, brand_more):
+    return render(request, brand_more+'.html')
