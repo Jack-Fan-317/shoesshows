@@ -3,7 +3,7 @@
 {% load staticfiles %}
     <html lang="en">
         <head>
-            {% block css %}<link rel="stylesheet" href="{% static 'css/display.css' %}">{% endblock css %}
+            {% block css %}<link rel="stylesheet" href="{% static 'css/shoes_list.css' %}">{% endblock css %}
             {% block title %}{% endblock title %}
         </head>
         <body>
@@ -35,9 +35,9 @@
                             <a href="{% url 'info:info' %}" class="show">网站介绍</a>
                             <div class="now" id='now'>球鞋展示
                                 <div class="frame1" id="frame">
-                                    <a href="{% url 'display:display' 'nike' %}">Nike</a>
-                                    <a href="{% url 'display:display' 'adidas' %}">Adidas</a>
-                                    <a href="{% url 'display:display' 'converse' %}">Converse</a>
+                                    <a href="{% url 'display:shoes_list' 'nike' %}">Nike</a>
+                                    <a href="{% url 'display:shoes_list' 'adidas' %}">Adidas</a>
+                                    <a href="{% url 'display:shoes_list' 'converse' %}">Converse</a>
                                 </div>
                             </div>
                             <a href="{% url 'news:news' '1' %}" class="show">球鞋资讯</a>
@@ -86,8 +86,65 @@
                 <script>alert('{{ msg.message }}');</script>
                 {% endfor %}
                 {% endif %}
+
                 <script src="{% static 'js/display.js' %}"></script>
                 <!-- <script src="{% static 'js/loadmore.js' %}"></script> -->
+                
+
+
+
+
+                <!-- <script>
+			var myBox = document.getElementById('box');
+			var myContent = document.getElementById('content');
+			var more = document.getElementById('more');
+			var myAdias = document.getElementById('adidas');
+			var MyEnd=document.getElementById('end');
+			function handleButtonPress(e) {
+				myBox.className = 'box';
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse1;
+				path_name1=e.target.parentNode.parentNode.parentNode.parentNode.id;
+				path_name2=e.target.parentNode.parentNode.parentNode.id;
+				file_name=e.target.id;
+				httprequest.open('GET',"http://www.shoesshows.club/shoes"+"/"+path_name1+"/"+path_name2+"/"+file_name+"/"+file_name+".html"); 
+				httprequest.send();		
+			}
+			function handleResponse1(e) {
+				if(e.target.readyState == XMLHttpRequest.DONE && e.target.status==200){
+					myContent.innerHTML=e.target.responseText;
+				}
+				
+			}
+			function handleResponse2(e) {
+				if(e.target.readyState == XMLHttpRequest.DONE && e.target.status==200){
+					myAdias.innerHTML+=e.target.responseText;
+					MyEnd.innerHTML="<h4>敬请期待</h4>";
+					more.className='last';
+					for (var i=0;i<document.querySelectorAll("#adidas li").length;i++){
+						document.querySelectorAll("#adidas li")[i].onclick = handleButtonPress;
+					}
+				}
+			}
+			function disappear() {
+				var myContent = document.getElementById('content');
+				var myBox = document.getElementById('box');
+				myContent.innerHTML='';
+				myBox.className='disappear';	
+			}
+			function getMore(e) {
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse2;
+				httprequest.open('GET','more_adidas.html'); 
+				httprequest.send();		
+			}
+			more.onclick=getMore;
+			for (var i=0;i<document.querySelectorAll("#adidas li").length;i++){
+				document.querySelectorAll("#adidas li")[i].onclick = handleButtonPress;
+			}
+			myBox.onclick=disappear; -->
+				
+		</script>
             {% endblock body %}
         </body>
     </html>

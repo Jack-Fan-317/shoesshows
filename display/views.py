@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def display(request, shoesname):
+def shoes_list(request, brand):
+    return render(request, brand+'.html')
+
+
+def shoes_detail(request, brand, series, shoesname):
     return render(request, shoesname+'.html')
-
-
-def load_more(request, shoesname, more_shoesname):
-    return render(request, more_shoesname+'.html')

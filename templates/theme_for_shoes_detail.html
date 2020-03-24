@@ -1,0 +1,22 @@
+{% extends 'theme.html' %}
+{% load staticfiles %}
+<html>
+	<head>
+        {% block css %}<link rel="stylesheet" href="{% static 'css/shoes_detail.css' %}">{% endblock css %}
+        {% block title %}{% endblock title %}
+    </head>
+    <body>
+        {% block body %}
+            <div id='emerge' class="emerge">
+                <figure>
+                    {% block image %}
+                    {% endblock image %}
+                </figure>
+                <section>
+                    {% block describe %}
+                    {% endblock describe %}
+                </section>
+            </div>
+        {% endblock body %}     
+    </body>
+</html>

@@ -60,7 +60,15 @@ ROOT_URLCONF = 'shoes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates',
+            os.path.join(BASE_DIR,'display/templates/adidas/harden'),
+            os.path.join(BASE_DIR,'display/templates/adidas/lillard'),
+            os.path.join(BASE_DIR,'display/templates/nike/kyrie'),
+            os.path.join(BASE_DIR,'display/templates/nike/leBron'),
+            os.path.join(BASE_DIR,'display/templates/converse/chuck'),
+            os.path.join(BASE_DIR,'display/templates/converse/jack purcell'),
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
