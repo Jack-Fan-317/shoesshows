@@ -38,14 +38,15 @@
 {% endblock main_shoestype %}
 {% block js %}
 	<script>
-		// 查看更多
-		function getMore(e) {
-			more = e.target.parentNode.id;
-			var httprequest = new XMLHttpRequest();
-			httprequest.onreadystatechange = handleResponse2;
-			httprequest.open('GET',"http://127.0.0.1:8089/display/converse/converse_more");
-			httprequest.send();		
-		}
-		more.onclick=getMore;
+		window.onload = function() {
+			// 查看更多
+			function getMore(e) {
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse2;
+				httprequest.open('GET',"http://127.0.0.1:8089/display/converse/converse_more");
+				httprequest.send();		
+			}
+			more.onclick=getMore;
+		};
 	</script>
 {% endblock js %}

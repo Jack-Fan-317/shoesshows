@@ -11,7 +11,7 @@
 	<li><img src="{% static 'img/adidas/6.png' %}" alt=""></li>
 	<li><img src="{% static 'img/adidas/1.png' %}" alt=""></li>
 {% endblock rotation_picture %}
-{% block main_shoestype %}					
+{% block main_shoestype %}
 	<div id="adidas">
 		<div id="harden">
 			<h2>Harden系列</h2>
@@ -39,15 +39,14 @@
 {% block js %}
 	<script>
 		window.onload = function() {
-		// 查看更多
-		function getMore(e) {
-			more = e.target.parentNode.id;
-			var httprequest = new XMLHttpRequest();
-			httprequest.onreadystatechange = handleResponse2;
-			httprequest.open('GET',"http://127.0.0.1:8089/display/adidas/adidas_more");
-			httprequest.send();		
-		}
-		more.onclick=getMore;
+			// 查看更多
+			function getMore(e) {
+				var httprequest = new XMLHttpRequest();
+				httprequest.onreadystatechange = handleResponse2;
+				httprequest.open('GET',"http://127.0.0.1:8089/display/adidas/adidas_more");
+				httprequest.send();		
+			}
+			more.onclick=getMore;
 		};
 	</script>
 {% endblock js %}
